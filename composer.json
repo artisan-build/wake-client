@@ -1,18 +1,15 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "artisan-build/wake-client",
-    "version": "0.1.0",
     "description": "The Laravel log client for a self-hosted Wake server.",
-    "keywords": ["laravel", "logs", "wake", "monolog"],
+    "keywords": [
+        "laravel",
+        "logs",
+        "wake",
+        "monolog"
+    ],
     "license": "MIT",
     "type": "library",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../wake-contracts",
-            "options": {"symlink": true}
-        }
-    ],
     "require": {
         "php": "^8.3",
         "artisan-build/wake-contracts": "^0.1",
@@ -45,11 +42,18 @@
         "lint": "pint",
         "lint:test": "pint --test",
         "stan": "phpstan analyse src --level=max --no-progress",
-        "ready": ["@lint:test", "@stan", "@test", "composer audit"]
+        "ready": [
+            "@lint:test",
+            "@stan",
+            "@test",
+            "composer audit"
+        ]
     },
     "extra": {
         "laravel": {
-            "providers": ["ArtisanBuild\\WakeClient\\WakeClientServiceProvider"]
+            "providers": [
+                "ArtisanBuild\\WakeClient\\WakeClientServiceProvider"
+            ]
         }
     },
     "config": {
